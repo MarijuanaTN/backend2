@@ -14,7 +14,7 @@ from sklearn.linear_model import LinearRegression
 import pickle,os
 
 def make_prediction(date):
-    file_path = os.path.join(os.getcwd(), 'API', 'model_predict')
+    file_path = os.path.abspath('API/model_predict')
     with open(file_path,'rb') as f:
         model=pickle.load(f)
     v=pd.DataFrame(date,index=[0])
