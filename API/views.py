@@ -11,10 +11,11 @@ import numpy as np # linear algebra
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
-import pickle
+import pickle,os
 
 def make_prediction(date):
-    with open('./model_predict','rb') as f:
+    file_path = os.path.join(os.getcwd(), 'API', 'model_predict')
+    with open(file_path,'rb') as f:
         model=pickle.load(f)
     v=pd.DataFrame(date,index=[0])
     pr=model.predict(v)
