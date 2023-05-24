@@ -19,8 +19,9 @@ def make_prediction(date):
         model=pickle.load(f)
     v=pd.DataFrame(date,index=[0])
     pr=model.predict(v)
-    print(pr)
-    return pr
+    pre=pr[0]
+    print(pre)
+    return pre
 
 class IntraDayViewSet(generics.ListAPIView):
     queryset=ForexData.objects.all()
