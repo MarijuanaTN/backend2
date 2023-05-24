@@ -14,7 +14,7 @@ from sklearn.linear_model import LinearRegression
 import pickle
 
 def make_prediction(date):
-    with open('API/model_predict','rb') as f:
+    with open('./model_predict','rb') as f:
         model=pickle.load(f)
     v=pd.DataFrame(date,index=[0])
     pr=model.predict(v)
