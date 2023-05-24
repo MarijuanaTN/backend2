@@ -24,3 +24,10 @@ class MonthlySerializer(serializers.ModelSerializer):
     class Meta:
         model=ForexData_Monthly
         fields= ['timestamp','symbol','open_price','high_price','low_price','close_price']
+
+class ExchangeSerializer(serializers.Serializer):
+    date=serializers.DateField()
+    strike=serializers.FloatField()
+    premium=serializers.FloatField()
+    type=serializers.CharField()
+    mode=serializers.CharField()

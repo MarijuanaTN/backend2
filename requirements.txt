@@ -5,3 +5,6 @@ whitenoise
 requests
 mysqlclient
 mysql-connector-python
+scikit-learn
+pandas
+numpy
